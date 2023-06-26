@@ -9,9 +9,9 @@ if(input.value === ""){
     return
 }
 
-// const li = document.createElement('li');
+const li = document.createElement('li');
 
-// li.appendChild(document.createTextNode(input.value));
+li.appendChild(document.createTextNode(input.value));
 
 // const deleteButton = document.createElement('button');
 // deleteButton.appendChild(document.createTextNode('delete'));
