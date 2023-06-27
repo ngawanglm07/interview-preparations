@@ -11,9 +11,15 @@ fetch(url , options)
 .then(data => {
 	console.log(data);
   let randomNumber = Math.floor(Math.random() * 111)
-	const language =data.data.languages[randomNumber].name;
+  const language =data.data.languages[randomNumber].name;
 
+  if(language.charAt(0) !== 'A'){
 	document.getElementById('output').innerHTML = `<p>${language}</p>`
+  } else {
+	document.getElementById('output').innerHTML = `<p>nothing</p>`
+  }
+
+	
 })
 .catch((error) => {
 	console.log(error);
