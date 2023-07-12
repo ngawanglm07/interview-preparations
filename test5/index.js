@@ -8,7 +8,6 @@
     }
   });
 
-
 // Function to fetch weather data from an API
 function getWeatherData(location) {
     const apiKey = '6673140855724724b6d65212232606'; // Replace with your actual API key
@@ -38,6 +37,7 @@ function getWeatherData(location) {
         alert('An error occurred. Please try again.');
       });
   }
+
   
 
   

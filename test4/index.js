@@ -22,7 +22,6 @@ deleteButton.addEventListener('click', function(){
 })
 
 input.value = ""
-
 }
 
 const input2 = document.getElementById('text');
