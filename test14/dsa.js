@@ -1,17 +1,93 @@
-class Node{
-    constructor(value){
-        this.value = value
-        this.next = null
+class Node {
+    constructor(value) {
+      this.value = value;
+      this.next = null;
     }
-}
-
-class linkedlist {
-    constructor(value){
-     const newNode = new Node(value)
-     this.head = newNode
-     this.tail = this.head
-     this.length = 1 
+  }
+  
+  class LinkedList {
+    constructor(value) {
+      const newNode = new Node(value);
+      this.head = newNode;
+      this.tail = this.head;
     }
-}
-
-let myLinkedlist = new linkedlist(4)
+  
+    printList() {
+      let temp = this.head;
+      while (temp !== null) {
+        console.log(temp.value);
+        temp = temp.next;
+      }
+    }
+  
+    getHead() {
+      if (this.head === null) {
+        console.log("Head: null");
+      } else {
+        console.log("Head: " + this.head.value);
+      }
+    }
+   
+    getTail() {
+      if (this.tail === null) {
+        console.log("Tail: null");
+      } else {
+        console.log("Tail: " + this.tail.value);
+      }
+    }
+  
+    makeEmpty() {
+      this.head = null;
+      this.tail = null;
+      this.length = 0;
+    }
+  
+    push(value) {
+      const newNode = new Node(value);
+      if (!this.head) {
+        this.head = newNode;
+        this.tail = newNode;
+      } else {
+        this.tail.next = newNode;
+        this.tail = newNode;
+      }
+    }
+  
+    findMiddleNode() {
+      let slow = this.head;
+      let fast = this.head;
+  
+      while (fast && fast.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+      }
+      return slow;
+    }
+  }
+  
+  let myLinkedList = new LinkedList(1);
+  myLinkedList.push(2);
+  myLinkedList.push(3);
+  
+  
+  console.log("Original list:");
+  myLinkedList.printList();
+  
+  const middleNode = myLinkedList.findMiddleNode();
+  console.log(`\nMiddle node value: ${middleNode.value}`);
+  
+  // Create a new list with an even number of elements
+  let myLinkedList2 = new LinkedList(1);
+  myLinkedList2.push(2);
+  myLinkedList2.push(3);
+  myLinkedList2.push(4);
+  
+  
+  console.log("\nOriginal list 2:");
+  myLinkedList2.printList();
+  
+  const middleNode2 = myLinkedList2.findMiddleNode();
+  console.log(`\nMiddle node value of list 2: ${middleNode2.value}`);
+  
+  
+  
