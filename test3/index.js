@@ -13,16 +13,16 @@ const li = document.createElement('li');
 
 li.appendChild(document.createTextNode(input.value));
 
-// const deleteButton = document.createElement('button');
-// deleteButton.appendChild(document.createTextNode('delete'));
+const deleteButton = document.createElement('button');
+deleteButton.appendChild(document.createTextNode('delete'));
 
-// deleteButton.addEventListener('click',function(){
-//     output.removeChild(li);
-// })
+deleteButton.addEventListener('click',function(){
+    output.removeChild(li);
+})
 
-// li.appendChild(deleteButton)
-// output.appendChild(li);
-// input.value = '';
+li.appendChild(deleteButton)
+output.appendChild(li);
+input.value = '';
 
 }
 
