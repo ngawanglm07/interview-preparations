@@ -25,11 +25,13 @@ const quizData = [
   let currentQuestion = 0;
   let score = 0;
   
+
   const questionElement = document.getElementById('question');
   const choicesElement = document.getElementById('choices');
   const submitButton = document.getElementById('submitBtn');
   const resultElement = document.getElementById('result');
   
+
   function loadQuestion() {
     const currentQuizData = quizData[currentQuestion];
   
@@ -39,11 +41,14 @@ const quizData = [
     currentQuizData.choices.forEach((choice) => {
       const button = document.createElement('button');
       button.innerText = choice;
-      button.classList.add('choice');
+      // button.classList.add('choice');
       choicesElement.appendChild(button);
     });
+
+
   }
   
+
   function checkAnswer(answer) {
     const currentQuizData = quizData[currentQuestion];
   
@@ -59,7 +64,8 @@ const quizData = [
       showResult();
     }
   }
-  
+
+
   function showResult() {
     questionElement.style.display = 'none';
     choicesElement.style.display = 'none';
@@ -72,9 +78,9 @@ const quizData = [
   loadQuestion();
   
   choicesElement.addEventListener('click', (event) => {
-    if (event.target.classList.contains('choice')) {
+    // if (event.target.classList.contains('choice')) {
       const selectedAnswer = event.target.innerText;
       checkAnswer(selectedAnswer);
-    }
+    // }
   });
   
