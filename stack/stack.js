@@ -3,39 +3,43 @@
 
 
 
-class stackQueue {
-    constructor(){
-        this.stackEnqueue = [];
-        this.stackDqueue = []
+class stackQueue{
+   constructor(){
+    this.stackEnqueue = [],
+    this.stackDequeue = []
+   }
+
+   enqueue(value){
+    this.stackEnqueue.push(value);
+   }
+
+   dequeue(){
+
+   
+    
+        while(this.stackEnqueue.length > 0){
+            this.stackDequeue.push(this.stackEnqueue.pop());
+        }
+   
+    
+    if(this.stackDequeue.length === 0){
+        return null
     }
 
-    enqueue(value){
-        this.stackEnqueue.push(value);
-    }
+    return this.stackDequeue.pop();
 
-    dequeue(){
-    if(this.stackDqueue.length === 0 ){
-       while(this.stackEnqueue.length !== 0){
-        this.stackDqueue.push(this.stackEnqueue.pop());
-       }
-    }
-
-    if(this.stackDqueue.length === 0){
-        return 'null';
-    }
+   }
 
 
-    return this.stackDqueue.pop();
-
-    }
 
 
 }
 
-let queue = new stackQueue();
-queue.enqueue(1)
-queue.enqueue(2)
-queue.enqueue(3)
-console.log(queue.dequeue()); 
-console.log(queue.dequeue());
-console.log(queue.dequeue());
+
+let Stacks = new stackQueue();
+Stacks.enqueue(1);
+Stacks.enqueue(2);
+Stacks.enqueue(3);
+console.log(Stacks.dequeue());
+console.log(Stacks.dequeue());
+console.log(Stacks.dequeue());
