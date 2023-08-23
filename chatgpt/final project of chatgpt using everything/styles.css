@@ -1,0 +1,34 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .formElement {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+
+  .formElement > * {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .sbtn{
+     background-color:#5cffad;
+  }
+
+
+  .cbtn{
+    background-color:#FB998E ;
+  }
+
+
+  .formElement button{
+    border-radius: 4px;
+
+  }
+
