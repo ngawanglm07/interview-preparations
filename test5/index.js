@@ -17,6 +17,7 @@ function getWeatherData(location) {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
         // Extract the required weather information
         const locationName = data.location.name;
         const locationCountry = data.location.country;
