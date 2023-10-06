@@ -1,10 +1,10 @@
 const input = document.getElementById('input');
-const output = document.getElementById('output');
+// const output = document.getElementById('output');
 const button = document.getElementById('butt')
 
 button.addEventListener('click' , function() {
     inputVal = input.value;
-    output.textContent = inputVal;
+    // output.textContent = inputVal;
    if(inputVal !== ''){
    getUser(inputVal)
    input.value = '';
@@ -30,7 +30,11 @@ async function getUser(username){
             console.log(data.data)
             console.log(data.data[0]);
             console.log(data.data[0].amount)
-        
+            const amount = data.data[0].amount;
+            const output = document.getElementById('output');
+            output.innerHTML = `
+              <h2>${amount}</h2>
+            `;
         })
         .catch(err =>{
           console.log(err)
